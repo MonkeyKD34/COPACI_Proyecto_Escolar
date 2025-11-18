@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Plataforma COPACI - Foro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-multi"></div>
+  <div class="header-wrap">
+    <header>
+      <div class="logo"><img src="logo_copaci.png" alt="Logo COPACI"></div>
+      <nav aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html" class="menu-1">Inicio</a></li>
+          <li><a href="informacion.html" class="menu-2">Información</a></li>
+          <li><a href="contacto.html" class="menu-3">Contacto</a></li>
+          <li><a href="foro.html" class="active menu-4">Foro (Inquietudes)</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <main class="container">
+    <section class="card">
+      <h2>Foro de inquietudes</h2>
+      <p>Comparte tus inquietudes y propuestas para la comunidad. Los mensajes pueden ser revisados por el comité y respondidos en reuniones o comunicados.</p>
+
+      <!-- Simple static list (sin DB). Incluir Netlify form para recibir publicaciones -->
+      <form name="foro-copaci" method="POST" data-netlify="true" class="card" style="margin-top:12px;">
+        <input type="hidden" name="form-name" value="foro-copaci">
+        <div class="form-row">
+          <label>Nombre (opcional)</label>
+          <input type="text" name="nombre">
+        </div>
+        <div class="form-row">
+          <label>Título</label>
+          <input type="text" name="titulo" required>
+        </div>
+        <div class="form-row">
+          <label>Mensaje</label>
+          <textarea name="mensaje" rows="5" required></textarea>
+        </div>
+        <button class="btn" type="submit">Publicar inquietud</button>
+      </form>
+
+      <hr style="margin:18px 0;">
+
+      <h3>Publicaciones recientes</h3>
+      <!-- Aquí pueden volcar dinámicamente con JS/JSON o mantener estático -->
+      <article class="anuncio-card" style="border-left-color:var(--pastel-green);">
+        <h3>Solicitud de luminarias en calle X</h3>
+        <div class="anuncio-meta">Vecino · 10 de noviembre, 2025</div>
+        <p>Hace falta mantenimiento en las luminarias de la calle X; por las noches hay poca iluminación y se percibe inseguridad.</p>
+      </article>
+
+      <article class="anuncio-card" style="border-left-color:var(--pastel-orange);">
+        <h3>Reposición de contenedores de basura</h3>
+        <div class="anuncio-meta">Vecino · 8 de noviembre, 2025</div>
+        <p>Se solicita la colocación de contenedores en la colonia Y para evitar acumulación de basura en la vía pública.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo_copaci.png" alt="logo" style="height:40px;">
+        Plataforma Digital COPACI
+      </div>
+      <div class="footer-links">
+        <span>&copy; 2025 COPACI</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
