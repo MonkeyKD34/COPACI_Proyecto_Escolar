@@ -1,78 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Plataforma COPACI - Foro</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Foro de Inquietudes - COPACI</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="top-multi"></div>
-  <div class="header-wrap">
+
     <header>
-      <div class="logo"><img src="logo_copaci.png" alt="Logo COPACI"></div>
-      <nav aria-label="Menú principal">
-        <ul>
-          <li><a href="index.html" class="menu-1">Inicio</a></li>
-          <li><a href="informacion.html" class="menu-2">Información</a></li>
-          <li><a href="contacto.html" class="menu-3">Contacto</a></li>
-          <li><a href="foro.html" class="active menu-4">Foro (Inquietudes)</a></li>
-        </ul>
-      </nav>
+        <div class="logo"><img src="logo_copaci.png" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="informacion.html">Información</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="foro.html" class="active">Foro</a></li>
+            </ul>
+        </nav>
     </header>
-  </div>
 
-  <main class="container">
-    <section class="card">
-      <h2>Foro de inquietudes</h2>
-      <p>Comparte tus inquietudes y propuestas para la comunidad. Los mensajes pueden ser revisados por el comité y respondidos en reuniones o comunicados.</p>
+    <main>
+        
+        <section class="form-section">
+            <h1>Publicar Nueva Inquietud</h1>
+            <div class="alert-info">
+                <p>📝 Tu reporte será enviado a la administración para revisión.</p>
+            </div>
+            
+            <form name="denuncias" method="POST" data-netlify="true" class="foro-form">
+                <input type="hidden" name="form-name" value="denuncias">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Título:</label>
+                        <input type="text" name="titulo" placeholder="Ej: Bache en calle Juárez" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoría:</label>
+                        <select name="categoria">
+                            <option value="baches">Baches</option>
+                            <option value="alumbrado">Alumbrado</option>
+                            <option value="seguridad">Seguridad</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Descripción Detallada:</label>
+                    <textarea name="descripcion" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Publicar Reporte</button>
+            </form>
+        </section>
 
-      <!-- Simple static list (sin DB). Incluir Netlify form para recibir publicaciones -->
-      <form name="foro-copaci" method="POST" data-netlify="true" class="card" style="margin-top:12px;">
-        <input type="hidden" name="form-name" value="foro-copaci">
-        <div class="form-row">
-          <label>Nombre (opcional)</label>
-          <input type="text" name="nombre">
-        </div>
-        <div class="form-row">
-          <label>Título</label>
-          <input type="text" name="titulo" required>
-        </div>
-        <div class="form-row">
-          <label>Mensaje</label>
-          <textarea name="mensaje" rows="5" required></textarea>
-        </div>
-        <button class="btn" type="submit">Publicar inquietud</button>
-      </form>
+        <hr class="divider">
 
-      <hr style="margin:18px 0;">
+        <section class="posts-section">
+            <h2>Inquietudes Recientes de la Comunidad</h2>
+            
+            <article class="post-card estatus-resuelto">
+                <div class="post-header">
+                    <span class="categoria-tag">💡 Alumbrado</span>
+                    <span class="fecha">15 Nov 2025</span>
+                </div>
+                <h3>Lámpara fundida en parque central</h3>
+                <p>La lámpara que está junto a los columpios no prende desde hace 3 días.</p>
+                <div class="post-footer">
+                    <span class="usuario">Por: Vecino Anónimo</span>
+                    <span class="status-badge">✅ Resuelto</span>
+                </div>
+                <div class="respuesta-oficial">
+                    <strong>Respuesta COPACI:</strong> Ya fue reparada el día de hoy por la cuadrilla.
+                </div>
+            </article>
 
-      <h3>Publicaciones recientes</h3>
-      <!-- Aquí pueden volcar dinámicamente con JS/JSON o mantener estático -->
-      <article class="anuncio-card" style="border-left-color:var(--pastel-green);">
-        <h3>Solicitud de luminarias en calle X</h3>
-        <div class="anuncio-meta">Vecino · 10 de noviembre, 2025</div>
-        <p>Hace falta mantenimiento en las luminarias de la calle X; por las noches hay poca iluminación y se percibe inseguridad.</p>
-      </article>
+            <article class="post-card estatus-abierto">
+                <div class="post-header">
+                    <span class="categoria-tag">🚧 Baches</span>
+                    <span class="fecha">16 Nov 2025</span>
+                </div>
+                <h3>Bache profundo en Av. Principal</h3>
+                <p>Hay un bache muy peligroso frente a la escuela primaria, ya dos autos cayeron.</p>
+                <div class="post-footer">
+                    <span class="usuario">Por: Juan Pérez</span>
+                    <span class="status-badge">⚠️ Abierto</span>
+                </div>
+            </article>
 
-      <article class="anuncio-card" style="border-left-color:var(--pastel-orange);">
-        <h3>Reposición de contenedores de basura</h3>
-        <div class="anuncio-meta">Vecino · 8 de noviembre, 2025</div>
-        <p>Se solicita la colocación de contenedores en la colonia Y para evitar acumulación de basura en la vía pública.</p>
-      </article>
-    </section>
-  </main>
+        </section>
+    </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
+    <footer>
+        <div class="footer-brand">
         <img src="logo_copaci.png" alt="logo" style="height:40px;">
         Plataforma Digital COPACI
       </div>
-      <div class="footer-links">
-        <span>&copy; 2025 COPACI</span>
-      </div>
-    </div>
-  </footer>
+    </footer>
+
 </body>
 </html>

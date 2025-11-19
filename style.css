@@ -244,3 +244,161 @@ footer{
   header{ padding:12px; }
   .hero{ flex-direction:column; align-items:flex-start; gap:12px; }
 }
+
+/* ==================
+   ESTILOS PÁGINA CONTACTO (MEJORADO)
+   ================== */
+
+.tarjetas-grid {
+    /* CAMBIO 1: Usamos Flexbox en lugar de Grid */
+    display: flex;
+    flex-wrap: wrap; /* Permite que bajen si no caben */
+    justify-content: center; /* ESTO ES LA CLAVE: Centra todo, incluso el mapa si queda solo */
+    gap: 30px; /* Espacio entre tarjetas */
+    margin-top: 30px;
+}
+
+.contacto-container h1 {
+    text-align: center;
+}
+
+.contacto-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px; /* Bordes más redonditos */
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Sombra más suave y elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Para controlar el ancho en Flexbox */
+    flex: 1 1 280px; /* Crece, se encoge, base de 280px */
+    max-width: 350px; /* Que no se hagan gigantes */
+    
+    /* CAMBIO 2: Borde superior con DEGRADADO */
+    /* Truco para border-image con bordes redondeados: */
+    position: relative;
+    overflow: hidden; /* Para que el degradado no se salga */
+    border-top: 5px solid #005a9c; /* Color base por si acaso */
+    border-image: linear-gradient(90deg, #005a9c, #0093e9) 1; /* El degradado en el borde */
+}
+
+/* Arreglo para que el border-image funcione con border-radius (o usamos un pseudo-elemento visual) */
+/* Si el border-image te da problemas con las curvas, usa este estilo simplificado que se ve genial: */
+.contacto-card {
+    border-top: none; /* Quitamos el border-image complejo */
+    border-image: none;
+    /* Ponemos una línea de color arriba usando un "sombrero" */
+    background-image: linear-gradient(90deg, #005a9c, #0093e9);
+    background-size: 100% 6px; /* Solo 6px de alto */
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.contacto-card:hover {
+    transform: translateY(-10px); /* Se levanta un poco más */
+    box-shadow: 0 15px 30px rgba(0, 58, 156, 0.15); /* Sombra azulada al pasar el mouse */
+}
+
+.contacto-card .icono {
+    font-size: 45px;
+    margin-bottom: 20px;
+    /* El ícono también con degradado (Texto degradado) */
+    background: -webkit-linear-gradient(#005a9c, #0093e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contacto-card h2 {
+    margin: 10px 0;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+/* CAMBIO 3: Botones con degradado */
+.btn-contacto {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    
+    /* Fondo degradado */
+    background: linear-gradient(90deg, #005a9c, #0093e9);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px; /* Botones redondos modernos */
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 90, 156, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-contacto:hover {
+    transform: scale(1.05); /* Crece un poquito al pasar el mouse */
+    background: linear-gradient(90deg, #004a80, #007cc7); /* Un poco más oscuro al hover */
+}
+
+/* ESTILOS ESPECÍFICOS DEL FORO */
+
+.form-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+}
+
+.divider {
+    margin: 40px 0;
+    border: 0;
+    border-top: 2px dashed #ccc;
+}
+
+/* Estilos de las Tarjetas de Denuncias (Posts) */
+.post-card {
+    background: white;
+    border-left: 5px solid #ccc; /* Borde por defecto */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Colores según estatus */
+.estatus-resuelto { border-left-color: #28a745; } /* Verde */
+.estatus-abierto { border-left-color: #ffc107; } /* Amarillo */
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.categoria-tag {
+    background: #eee;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.post-card h3 { margin: 0 0 10px 0; color: #333; }
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.status-badge { font-weight: bold; }
+
+/* Respuesta Oficial */
+.respuesta-oficial {
+    margin-top: 15px;
+    background-color: #f0f9ff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #bde0fe;
+    font-size: 0.9rem;
+    color: #005a9c;
+}

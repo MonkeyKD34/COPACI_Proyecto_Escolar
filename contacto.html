@@ -1,78 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Plataforma COPACI - Contacto</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - COPACI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="top-multi"></div>
-  <div class="header-wrap">
+
     <header>
-      <div class="logo"><img src="logo_copaci.png" alt="Logo COPACI"></div>
-      <nav aria-label="Menú principal">
-        <ul>
-          <li><a href="index.html" class="menu-1">Inicio</a></li>
-          <li><a href="informacion.html" class="menu-2">Información</a></li>
-          <li><a href="contacto.html" class="active menu-3">Contacto</a></li>
-          <li><a href="foro.html" class="menu-4">Foro (Inquietudes)</a></li>
-        </ul>
-      </nav>
+        <div class="logo">
+             <img src="logo_copaci.png" alt="Logo COPACI">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="informacion.html">Información</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="foro.html">Foro (Inquietudes)</a></li>
+            </ul>
+        </nav>
     </header>
-  </div>
 
-  <main class="container page-grid">
-    <section class="card">
-      <h2>Contacto</h2>
-      <p>Si tienes una inquietud, propuesta o reporte, escríbenos usando el formulario. También puedes visitarnos en nuestras oficinas municipales en horario de atención.</p>
+    <main>
+        <section class="contacto-container">
+            <h1>Medios de Contacto Oficiales</h1>
+            <p style="text-align: center;">Estamos disponibles para atenderte a través de nuestros canales oficiales.</p>
 
-      <!-- Netlify Form -->
-      <form name="contacto-copaci" method="POST" data-netlify="true" class="card" style="margin-top:12px;">
-        <input type="hidden" name="form-name" value="contacto-copaci">
-        <div class="form-row">
-          <label>Nombre</label>
-          <input type="text" name="nombre" required>
-        </div>
-        <div class="form-row">
-          <label>Correo electrónico</label>
-          <input type="email" name="email" required>
-        </div>
-        <div class="form-row">
-          <label>Asunto</label>
-          <input type="text" name="asunto" required>
-        </div>
-        <div class="form-row">
-          <label>Mensaje</label>
-          <textarea name="mensaje" rows="5" required></textarea>
-        </div>
-        <button class="btn" type="submit">Enviar mensaje</button>
-      </form>
-    </section>
+            <div class="tarjetas-grid">
+                
+                <div class="contacto-card">
+                    <div class="icono"><i class="fab fa-facebook-f"></i></div>
+                    <h2>Facebook</h2>
+                    <p>Síguenos para noticias rápidas</p>
+                    <a href="https://facebook.com/copaci-tu-municipio" target="_blank" class="btn-contacto">Ir a la Página</a>
+                </div>
 
-    <aside class="card">
-      <h3>Datos de contacto</h3>
-      <p><strong>Teléfono:</strong> (55) 1234-5678</p>
-      <p><strong>Correo:</strong> contacto@copaci.mx</p>
-      <p><strong>Dirección:</strong> Av. Principal s/n, Municipio</p>
+                <div class="contacto-card">
+                    <div class="icono"><i class="fas fa-phone-alt"></i></div>
+                    <h2>Teléfono de Oficina</h2>
+                    <p>Atención Lun-Vie 9am-5pm</p>
+                    <a href="tel:+525512345678" class="btn-contacto">55 1234 5678</a>
+                </div>
 
-      <hr style="margin:12px 0;">
-      <h4>Redes</h4>
-      <p>Facebook: <a href="#">facebook.com/copaci-local</a></p>
-      <p>Twitter: <a href="#">@copaci_local</a></p>
-    </aside>
-  </main>
+                <div class="contacto-card">
+                    <div class="icono"><i class="fab fa-whatsapp"></i></div>
+                    <h2>WhatsApp</h2>
+                    <p>Reportes urgentes</p>
+                    <a href="https://wa.me/525512345678" target="_blank" class="btn-contacto">Enviar Mensaje</a>
+                </div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
+                <div class="contacto-card">
+                    <div class="icono"><i class="fas fa-map-marker-alt"></i></div>
+                    <h2>Oficinas</h2>
+                    <p>Presidencia Municipal, Planta Baja</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-contacto">Ver Mapa</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+        <div class="footer-brand">
         <img src="logo_copaci.png" alt="logo" style="height:40px;">
         Plataforma Digital COPACI
       </div>
-      <div class="footer-links">
-        <span>&copy; 2025 COPACI</span>
-      </div>
-    </div>
-  </footer>
+    </footer>
+
 </body>
 </html>
