@@ -37,35 +37,31 @@
             <p>📝 Tu reporte será enviado a la administración para revisión.</p>
           </div>
     
-          <form name="denuncias" method="POST" data-netlify="true" action="/gracias.html">
-            <input type="hidden" name="form-name" value="denuncias">
-        
-          <div class="form-row">
-            <div class="form-group">
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo" placeholder="Ej: Bache en calle Juárez" required>
-            </div>
-            <div class="form-group">
-                <label for="categoria">Categoría:</label>
-                <select id="categoria" name="categoria" required>
-                    <option value="">Selecciona una categoría</option>
-                    <option value="baches">🚧 Baches</option>
-                    <option value="alumbrado">💡 Alumbrado</option>
-                    <option value="seguridad">👮 Seguridad</option>
-                    <option value="limpieza">🧹 Limpieza</option>
-                    <option value="agua">💧 Agua</option>
-                    <option value="otros">❓ Otros</option>
-                </select>
-            </div>
-        </div>
-        
+      <form name="denuncias" method="POST" netlify>
+        <input type="hidden" name="form-name" value="denuncias">
+    
+        <div class="form-row">
         <div class="form-group">
-            <label for="descripcion">Descripción Detallada:</label>
-            <textarea id="descripcion" name="descripcion" rows="5" 
-                      placeholder="Describe detalladamente el problema o inquietud..." required></textarea>
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Ej: Bache en calle Juárez" required>
         </div>
-        
-        <button type="submit" class="btn-submit">📤 Publicar Reporte</button>
+        <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="">Selecciona una categoría</option>
+                <option value="baches">🚧 Baches</option>
+                <option value="alumbrado">💡 Alumbrado</option>
+                <option value="seguridad">👮 Seguridad</option>
+            </select>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="descripcion">Descripción Detallada:</label>
+          <textarea id="descripcion" name="descripcion" rows="5" placeholder="Describe detalladamente el problema o inquietud..." required></textarea>
+        </div>
+    
+      <button type="submit" class="btn-submit">📤 Publicar Reporte</button>
     </form>
 </section>
 
