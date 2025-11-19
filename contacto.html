@@ -9,20 +9,27 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-             <img src="logo_copaci.png" alt="Logo COPACI">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="informacion.html">Información</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
-                <li><a href="foro.html">Foro (Inquietudes)</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Thin multicolor top bar -->
+  <div class="top-multi"></div>
 
+  <!-- Header wrap (contains top/bottom thin lines via CSS) -->
+  <div class="header-wrap">
+    <header>
+      <div class="logo">
+        <img src="logo_copaci.png" alt="Logo COPACI">
+      </div>
+
+      <nav aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html" class="menu-1">Inicio</a></li>
+          <li><a href="informacion.html" class="menu-2">Información</a></li>
+          <li><a href="contacto.html" class="active menu-3">Contacto</a></li>
+          <li><a href="foro.html" class="menu-4">Foro (Inquietudes)</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  
     <main>
         <section class="contacto-container">
             <h1>Medios de Contacto Oficiales</h1>
@@ -64,10 +71,14 @@
 
     <footer>
         <div class="footer-inner">
-        <div class="footer-brand">
+      <div class="footer-brand">
         <img src="logo_copaci.png" alt="logo" style="height:40px;">
         Plataforma Digital COPACI
       </div>
+      <div class="footer-links">
+        <span>&copy; 2025 COPACI</span>
+      </div>
+    </div>
     </footer>
 
 </body>

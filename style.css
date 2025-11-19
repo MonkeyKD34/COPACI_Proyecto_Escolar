@@ -119,10 +119,11 @@ nav a.menu-3:hover{ background: linear-gradient(90deg, rgba(205,180,219,0.95), r
 nav a.menu-4:hover{ background: linear-gradient(90deg, rgba(255,233,168,0.95), rgba(255,214,165,0.95)); color:#222; }
 
 /* Active link style */
-nav a.active{
-  outline: 3px solid rgba(107,159,181,0.14);
-  background: rgba(255,255,255,0.6);
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.03);
+nav a:hover,
+nav a.active {
+    background-color: #005a9c; /* Fondo Azul */
+    color: #ffffff;            /* Texto Blanco */
+    transition: 0.3s;          /* Suavizado */
 }
 
 /* Main container */
@@ -401,4 +402,156 @@ footer{
     border: 1px solid #bde0fe;
     font-size: 0.9rem;
     color: #005a9c;
+}
+
+/* ==================
+   ESTILOS MEJORADOS PARA EL FORO
+   ================== */
+
+.foro-form {
+    background: linear-gradient(135deg, rgba(168,218,220,0.12), rgba(205,180,219,0.08));
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.03);
+    margin-bottom: 30px;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-green));
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent);
+}
+
+.alert-info p {
+    margin: 0;
+    color: #08303a;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #184a57;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mejora los inputs */
+.foro-form input[type="text"],
+.foro-form select,
+.foro-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(168,218,220,0.3);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.foro-form input[type="text"]:focus,
+.foro-form select:focus,
+.foro-form textarea:focus {
+    border-color: var(--pastel-blue);
+    box-shadow: 0 0 0 3px rgba(168,218,220,0.2);
+    outline: none;
+}
+
+/* Botón mejorado */
+.btn-submit {
+    background: linear-gradient(90deg, var(--pastel-blue), var(--pastel-green));
+    color: #08303a;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(24,107,127,0.2);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(24,107,127,0.3);
+    background: linear-gradient(90deg, var(--pastel-green), var(--pastel-blue));
+}
+
+/* Mejora las tarjetas de posts existentes */
+.posts-section h2 {
+    color: #184a57;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.post-card {
+    background: white;
+    border-left: 6px solid var(--pastel-blue);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(20,30,40,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(20,30,40,0.1);
+}
+
+/* Colores según estatus - versión mejorada */
+.estatus-resuelto { 
+    border-left-color: #28a745;
+    background: linear-gradient(135deg, #ffffff, #f8fff9);
+}
+
+.estatus-abierto { 
+    border-left-color: #ffc107;
+    background: linear-gradient(135deg, #ffffff, #fffdf6);
+}
+
+.categoria-tag {
+    background: linear-gradient(90deg, var(--pastel-purple), var(--pastel-blue));
+    color: #222;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.status-badge {
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.estatus-resuelto .status-badge {
+    background: #28a745;
+    color: white;
+}
+
+.estatus-abierto .status-badge {
+    background: #ffc107;
+    color: #222;
 }

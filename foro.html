@@ -2,57 +2,72 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foro de Inquietudes - COPACI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Thin multicolor top bar -->
+  <div class="top-multi"></div>
+
+  <!-- Header wrap (contains top/bottom thin lines via CSS) -->
+  <div class="header-wrap">
     <header>
-        <div class="logo"><img src="logo_copaci.png" alt="Logo"></div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="informacion.html">Información</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="foro.html" class="active">Foro</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <img src="logo_copaci.png" alt="Logo COPACI">
+      </div>
+
+      <nav aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html" class="menu-1">Inicio</a></li>
+          <li><a href="informacion.html" class="menu-2">Información</a></li>
+          <li><a href="contacto.html" class="menu-3">Contacto</a></li>
+          <li><a href="foro.html" class="active menu-4">Foro (Inquietudes)</a></li>
+        </ul>
+      </nav>
     </header>
+  </div>
 
     <main>
         
-        <section class="form-section">
-            <h1>Publicar Nueva Inquietud</h1>
-            <div class="alert-info">
-                <p>📝 Tu reporte será enviado a la administración para revisión.</p>
+        <section class="form-section foro-form">
+          <h1>Publicar Nueva Inquietud</h1>
+          <div class="alert-info">
+            <p>📝 Tu reporte será enviado a la administración para revisión.</p>
+          </div>
+    
+          <form name="denuncias" method="POST" data-netlify="true" action="/gracias.html">
+            <input type="hidden" name="form-name" value="denuncias">
+        
+          <div class="form-row">
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Ej: Bache en calle Juárez" required>
             </div>
-            
-            <form name="denuncias" method="POST" data-netlify="true" action="/gracias.html" class="foro-form">
-                <input type="hidden" name="form-name" value="denuncias">
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Título:</label>
-                        <input type="text" name="titulo" placeholder="Ej: Bache en calle Juárez" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Categoría:</label>
-                        <select name="categoria">
-                            <option value="baches">Baches</option>
-                            <option value="alumbrado">Alumbrado</option>
-                            <option value="seguridad">Seguridad</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Descripción Detallada:</label>
-                    <textarea name="descripcion" rows="4" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn-submit">Publicar Reporte</button>
-            </form>
-        </section>
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="baches">🚧 Baches</option>
+                    <option value="alumbrado">💡 Alumbrado</option>
+                    <option value="seguridad">👮 Seguridad</option>
+                    <option value="limpieza">🧹 Limpieza</option>
+                    <option value="agua">💧 Agua</option>
+                    <option value="otros">❓ Otros</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="descripcion">Descripción Detallada:</label>
+            <textarea id="descripcion" name="descripcion" rows="5" 
+                      placeholder="Describe detalladamente el problema o inquietud..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">📤 Publicar Reporte</button>
+    </form>
+</section>
 
         <hr class="divider">
 
@@ -92,10 +107,15 @@
     </main>
 
     <footer>
-        <div class="footer-brand">
+       <div class="footer-inner">
+      <div class="footer-brand">
         <img src="logo_copaci.png" alt="logo" style="height:40px;">
         Plataforma Digital COPACI
       </div>
+      <div class="footer-links">
+        <span>&copy; 2025 COPACI</span>
+      </div>
+    </div>
     </footer>
 
 </body>
