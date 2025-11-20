@@ -557,11 +557,37 @@ footer{
 }
 
 /* ==================
-   MENÚ RESPONSIVE PARA MÓVILES
+   MENÚ RESPONSIVE PARA MÓVILES - CORREGIDO
    ================== */
 
-/* Ocultar el menú normal en móviles */
+/* Ocultar botón hamburguesa en desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* Solo aplicar hamburguesa en móviles */
 @media (max-width: 768px) {
+    /* Mostrar botón hamburguesa */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-color);
+        padding: 8px 12px;
+        background: linear-gradient(135deg, rgba(168,218,220,0.2), rgba(205,180,219,0.1));
+        border: 2px solid rgba(168,218,220,0.3);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+        background: linear-gradient(135deg, rgba(168,218,220,0.4), rgba(205,180,219,0.3));
+        transform: scale(1.05);
+    }
+
+    /* Ocultar el menú normal en móviles */
     nav ul {
         display: none;
         flex-direction: column;
@@ -573,6 +599,8 @@ footer{
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         z-index: 1000;
         padding: 10px;
+        margin-top: 10px;
+        border-radius: 0 0 10px 10px;
     }
 
     nav ul.show {
@@ -587,45 +615,16 @@ footer{
         margin: 2px 0;
     }
 
-    /* Botón hamburguesa */
-    .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--text-color);
-        padding: 5px 10px;
-    }
-
     /* Header se ajusta */
     header {
         flex-wrap: wrap;
-        padding: 10px 15px;
+        padding: 12px 15px;
+        position: relative;
     }
 
     .logo img {
         height: 45px;
     }
-}
-
-/* Ocultar botón hamburguesa en desktop */
-.menu-toggle {
-    display: none;
-}
-
-/* Estilos del botón hamburguesa */
-.menu-toggle {
-    background: linear-gradient(135deg, rgba(168,218,220,0.2), rgba(205,180,219,0.1));
-    border: 2px solid rgba(168,218,220,0.3);
-    border-radius: 8px;
-    padding: 8px 12px;
-    transition: all 0.3s ease;
-}
-
-.menu-toggle:hover {
-    background: linear-gradient(135deg, rgba(168,218,220,0.4), rgba(205,180,219,0.3));
-    transform: scale(1.05);
 }
 
 /* Responsive existente - NO LO BORRES */
