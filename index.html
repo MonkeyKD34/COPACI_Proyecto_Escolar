@@ -18,14 +18,19 @@
         <img src="logo_copaci.png" alt="Logo COPACI">
       </div>
 
-      <nav aria-label="Menú principal">
-        <ul>
-          <li><a href="index.html" class="active menu-1">Inicio</a></li>
-          <li><a href="informacion.html" class="menu-2">Información</a></li>
-          <li><a href="contacto.html" class="menu-3">Contacto</a></li>
-          <li><a href="foro.html" class="menu-4">Foro (Inquietudes)</a></li>
-        </ul>
-      </nav>
+    <nav aria-label="Menú principal">
+    <!-- Botón hamburguesa para móviles -->
+    <button class="menu-toggle" aria-label="Abrir menú">
+        ☰
+    </button>
+    
+    <ul id="menu">
+        <li><a href="index.html" class="menu-1">Inicio</a></li>
+        <li><a href="informacion.html" class="menu-2">Información</a></li>
+        <li><a href="contacto.html" class="menu-3">Contacto</a></li>
+        <li><a href="foro.html" class="menu-4">Foro (Inquietudes)</a></li>
+    </ul>
+    </nav>
     </header>
   </div>
 
@@ -74,6 +79,39 @@
       </div>
     </div>
   </footer>
+
+<script>
+    // Menú hamburguesa para móviles
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('#menu');
+        
+        if (menuToggle && menu) {
+            menuToggle.addEventListener('click', function() {
+                menu.classList.toggle('show');
+                // Cambiar ícono
+                this.textContent = menu.classList.contains('show') ? '✕' : '☰';
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            const menuLinks = menu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('show');
+                    menuToggle.textContent = '☰';
+                });
+            });
+            
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('nav') && menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                    menuToggle.textContent = '☰';
+                }
+            });
+        }
+    });
+</script>
 
 </body>
 </html>

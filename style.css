@@ -555,3 +555,111 @@ footer{
     background: #ffc107;
     color: #222;
 }
+
+/* ==================
+   MENÚ RESPONSIVE PARA MÓVILES
+   ================== */
+
+/* Ocultar el menú normal en móviles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 10px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 2px 0;
+    }
+
+    /* Botón hamburguesa */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-color);
+        padding: 5px 10px;
+    }
+
+    /* Header se ajusta */
+    header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+}
+
+/* Ocultar botón hamburguesa en desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* Estilos del botón hamburguesa */
+.menu-toggle {
+    background: linear-gradient(135deg, rgba(168,218,220,0.2), rgba(205,180,219,0.1));
+    border: 2px solid rgba(168,218,220,0.3);
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: linear-gradient(135deg, rgba(168,218,220,0.4), rgba(205,180,219,0.3));
+    transform: scale(1.05);
+}
+
+/* Responsive existente - NO LO BORRES */
+@media (max-width: 900px){
+  .page-grid{ grid-template-columns: 1fr; }
+  nav ul{ gap:6px; }
+  header{ padding:12px; }
+  .hero{ flex-direction:column; align-items:flex-start; gap:12px; }
+}
+
+/* NUEVO - móviles pequeños */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+    
+    .hero {
+        padding: 18px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+    
+    .anuncio-card {
+        padding: 14px;
+    }
+    
+    .footer-inner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
